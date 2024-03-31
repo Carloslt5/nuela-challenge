@@ -1,7 +1,7 @@
-import { Subject } from "../types/Subjects.types";
-import { CourseGroup, CourseType } from "./Couses.const";
+import { CourseGroup, CourseType } from "../types/Courses.types";
+import { Subject, SubjectType } from "../types/Subjects.types";
 
-export const SubjectData = [
+export const AllSubjects = [
   Subject.Matematicas,
   Subject.Fisica,
   Subject.Quimica,
@@ -16,15 +16,15 @@ export const SubjectData = [
   Subject.Tecnologia,
 ];
 
-export const SubjectType = ["Obligatoria", "Optativa"];
+export const AllSubjectsType = [SubjectType.Obligatoria, SubjectType.Optativa];
 
-export const SubjectSpace = {
+export const AllSpace = {
   [CourseType.PrimeroESO]: [CourseGroup.A, CourseGroup.B, CourseGroup.C, CourseGroup.D],
   [CourseType.SegundoESO]: [CourseGroup.A, CourseGroup.B, CourseGroup.C, CourseGroup.D],
   [CourseType.TerceroESO]: [CourseGroup.A, CourseGroup.B, CourseGroup.C, CourseGroup.D],
   [CourseType.CuartoESO]: [CourseGroup.A, CourseGroup.B, CourseGroup.C, CourseGroup.D],
   [CourseType.PrimeroBachillerato]: [CourseGroup.A, CourseGroup.B, CourseGroup.C, CourseGroup.D],
   [CourseType.SegundoBachillerato]: [CourseGroup.A, CourseGroup.B, CourseGroup.C, CourseGroup.D],
-  Laboratorio: "Laboratorio",
-  Gimnasio: "Gimnasio",
+  [CourseType.Laboratorio]: [CourseType.Laboratorio],
+  [CourseType.Gimnasio]: [CourseType.Gimnasio],
 };

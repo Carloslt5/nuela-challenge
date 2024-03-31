@@ -12,3 +12,8 @@ export enum Subject {
   Musica = "Música",
   Tecnologia = "Tecnología",
 }
+
+export enum SubjectType {
+  Obligatoria = "Obligatoria",
+  Optativa = "Optativa",
+}
