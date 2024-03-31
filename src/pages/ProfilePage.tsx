@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { SimpleWidget } from "../components/SimpleWidget";
 import { Table } from "../components/Table";
 import { UserInfo } from "../components/UserInfo";
+import { ViewType } from "../components/ViewType";
 import { CourseContext } from "../contexts/courses.context";
 
 export const ProfilePage = () => {
@@ -18,10 +19,8 @@ export const ProfilePage = () => {
       </section>
 
       <section className="flex flex-col items-start justify-center pb-2 border-b border-gray-500">
-        <ul className="flex items-start justify-center p-1 mx-auto mb-6 text-sm font-bold rounded-md bg-slate-300">
-          <li className="px-4 py-1 bg-white rounded-md">Semanal</li>
-          <li className="px-4 py-1 rounded-md">Anual</li>
-        </ul>
+        <ViewType />
+
         <div className="grid w-full grid-cols-3 gap-2">
           <SimpleWidget title="Horas totales" value={totalHours} />
           <SimpleWidget title="Horas lectivas" value={0} />

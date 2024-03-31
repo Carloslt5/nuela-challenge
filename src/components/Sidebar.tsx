@@ -1,4 +1,4 @@
-import { IoBrowsersOutline, IoLogoReact, IoTimeOutline } from "react-icons/io5";
+import { IoBrowsersOutline, IoLogoReact, IoPeopleSharp, IoTimeOutline } from "react-icons/io5";
 import { SidebarMenuItem } from "./SidebarMenuItem";
 
 const menuItems = [
@@ -11,6 +11,11 @@ const menuItems = [
     path: "/profile/horarios",
     icon: <IoTimeOutline size={20} />,
     title: "Horarios",
+  },
+  {
+    path: "/profile/profesores",
+    icon: <IoPeopleSharp size={20} />,
+    title: "Profesores",
   },
 ];
 
