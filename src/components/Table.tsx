@@ -29,7 +29,7 @@ export const Table = ({ courses }: TableProps) => {
             <td>{item.tipo}</td>
             <td>{item.curso}</td>
             <td>{item.grupo}</td>
-            <td>{item.horas_semanales}</td>
+            <td>{item.horas_semanales} h</td>
             <td>{item.espacio_regular}</td>
             <td className="flex flex-wrap gap-1 text-sm">
               <button className="text-nuela-primary">Ver</button>
