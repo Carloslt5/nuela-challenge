@@ -87,13 +87,11 @@ export const FormPage = () => {
           required
         >
           {Object.entries(AllSpace).flatMap(([course, value]) => {
-            if (Array.isArray(value)) {
-              return value.map((group) => (
-                <option key={`${course}-${group}`} value={`${course} - Grupo ${group}`}>
-                  {`${course} - Grupo ${group}`}
-                </option>
-              ));
-            }
+            return value.map((group) => (
+              <option key={`${course}-${group}`} value={`${course} - Grupo ${group}`}>
+                {`${course} - Grupo ${group}`}
+              </option>
+            ));
           })}
         </select>
       </div>
