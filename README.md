@@ -16,12 +16,12 @@ https://main--fluffy-beijinho-a509f4.netlify.app/
 
 ## Routes
 
-| URL                   | Description      |
-| --------------------- | ---------------- |
-| `/profile`            | Profile page     |
-| `/profile/add`        | Add course Form  |
-| `/profile/horarios`   | Time Tables page |
-| `/profile/profesores` | teachers page    |
+| URL                  | Description      |
+| -------------------- | ---------------- |
+| `/perfil`            | Profile page     |
+| `/perfil/add`        | Add course Form  |
+| `/perfil/horarios`   | Time Tables page |
+| `/perfil/profesores` | teachers page    |
 
 ## Technologies
 

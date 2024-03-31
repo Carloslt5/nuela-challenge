@@ -30,7 +30,7 @@ export const ProfilePage = () => {
 
       <section>
         <Link
-          to={"/profile/add"}
+          to={"/perfil/add"}
           className="flex items-center gap-2 px-4 py-2 my-4 ml-auto text-white rounded-md bg-nuela-primary w-fit"
         >
           <IoAdd size={20} />

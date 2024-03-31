@@ -3,17 +3,17 @@ import { SidebarMenuItem } from "./SidebarMenuItem";
 
 const menuItems = [
   {
-    path: "/profile",
+    path: "/perfil",
     icon: <IoBrowsersOutline size={20} />,
     title: "Inico",
   },
   {
-    path: "/profile/horarios",
+    path: "/perfil/horarios",
     icon: <IoTimeOutline size={20} />,
     title: "Horarios",
   },
   {
-    path: "/profile/profesores",
+    path: "/perfil/profesores",
     icon: <IoPeopleSharp size={20} />,
     title: "Profesores",
   },
