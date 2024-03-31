@@ -1,20 +1,25 @@
 import { CourseGroup, CourseHours, CourseType } from "../constants/Couses.const";
 import { SubjectData, SubjectSpace, SubjectType } from "../constants/Subjects.const";
+import { useCourse } from "../hooks/useCourse.hook";
 
 export const FormPage = () => {
+  const { register, handleSubmit, onSubmit } = useCourse();
+
   return (
-    <form className="w-full max-w-lg p-4 mx-auto mt-5 bg-white rounded-md">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="w-full max-w-lg p-4 mx-auto mt-5 bg-white rounded-md"
+    >
       <h1 className="mb-4">Añadir asignatura</h1>
 
       <div className="w-full mb-6 ">
         <label className="block mb-2 text-sm font-medium text-gray-900">
           Selecciona la asignatura
         </label>
-        <select className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md">
-          <option disabled selected>
-            Selecciona una asignatura
-          </option>
-
+        <select
+          {...register("nombre")}
+          className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md"
+        >
           {SubjectData.map((asignatura, index) => (
             <option key={index}>{asignatura}</option>
           ))}
@@ -23,11 +28,10 @@ export const FormPage = () => {
 
       <div className="w-full mb-6 ">
         <label className="block mb-2 text-sm font-medium text-gray-900">Tipo de asignatura</label>
-        <select className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md">
-          <option disabled selected>
-            Selecciona el tipo
-          </option>
-
+        <select
+          {...register("tipo")}
+          className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md"
+        >
           {SubjectType.map((type, index) => (
             <option key={index}>{type}</option>
           ))}
@@ -36,11 +40,10 @@ export const FormPage = () => {
 
       <div className="w-full mb-6 ">
         <label className="block mb-2 text-sm font-medium text-gray-900">Curso</label>
-        <select className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md">
-          <option disabled selected>
-            Selecciona el curso
-          </option>
-
+        <select
+          {...register("curso")}
+          className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md"
+        >
           {Object.values(CourseType).map((course, index) => (
             <option key={index}>{course}</option>
           ))}
@@ -49,11 +52,10 @@ export const FormPage = () => {
 
       <div className="w-full mb-6 ">
         <label className="block mb-2 text-sm font-medium text-gray-900">Grupo</label>
-        <select className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md">
-          <option disabled selected>
-            Selecciona el grupo
-          </option>
-
+        <select
+          {...register("grupo")}
+          className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md"
+        >
           {Object.values(CourseGroup).map((course, index) => (
             <option key={index}>{course}</option>
           ))}
@@ -62,11 +64,10 @@ export const FormPage = () => {
 
       <div className="w-full mb-6 ">
         <label className="block mb-2 text-sm font-medium text-gray-900">Horas</label>
-        <select className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md">
-          <option disabled selected>
-            Selecciona las horas
-          </option>
-
+        <select
+          {...register("horas_semanales")}
+          className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md"
+        >
           {CourseHours.map((hour, index) => (
             <option key={index}>{hour}</option>
           ))}
@@ -75,11 +76,10 @@ export const FormPage = () => {
 
       <div className="w-full mb-6 ">
         <label className="block mb-2 text-sm font-medium text-gray-900">Espacio</label>
-        <select className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md">
-          <option disabled selected>
-            Selecciona el espacio
-          </option>
-
+        <select
+          {...register("espacio_regular")}
+          className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md"
+        >
           {Object.entries(SubjectSpace).flatMap(([course, value]) => {
             if (Array.isArray(value)) {
               return value.map((group) => (

@@ -1,15 +1,17 @@
-import { ReactNode, createContext, useCallback, useState } from "react";
+import { ReactNode, createContext, useCallback, useEffect, useState } from "react";
 import courseService from "../services/course.services";
 import { Course } from "../types/Courses.types";
 
 interface CourseContextType {
   courses: Course[];
   loadCourses: () => Promise<void>;
+  setCourses: React.Dispatch<React.SetStateAction<Course[]>>;
 }
 
 export const CourseContext = createContext<CourseContextType>({
   courses: [],
   loadCourses: async () => {},
+  setCourses: () => {},
 });
 
 export function CourseProviderWrapper({ children }: { children: ReactNode }) {
@@ -20,7 +22,11 @@ export function CourseProviderWrapper({ children }: { children: ReactNode }) {
     setCourses(data);
   }, []);
 
-  const value = { courses, loadCourses };
+  useEffect(() => {
+    loadCourses();
+  }, [loadCourses]);
+
+  const value = { courses, loadCourses, setCourses };
 
   return <CourseContext.Provider value={value}>{children}</CourseContext.Provider>;
 }

@@ -6,5 +6,5 @@ export interface Course {
   horas_semanales: string;
   nombre: string;
   tipo: string;
-  curso: Subject;
+  curso: Subject | "";
 }

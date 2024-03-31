@@ -1,12 +1,8 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { CourseContext } from "../contexts/courses.context";
 
 export const Table = () => {
-  const { courses, loadCourses } = useContext(CourseContext);
-
-  useEffect(() => {
-    loadCourses();
-  }, [loadCourses]);
+  const { courses } = useContext(CourseContext);
 
   return (
     <table className="w-full overflow-hidden bg-white rounded-xl">
