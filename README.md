@@ -10,6 +10,8 @@ Los estados estan manejados mediante Context API de React.
 
 Los cursos que aparecen, prodecen de un fetch a Supabase.
 
+**Time Spent:** 6 horas 30 minutos
+
 ## Deploy
 
 https://main--fluffy-beijinho-a509f4.netlify.app/
