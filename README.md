@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+## Nuela-Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+En esta pruebla de front end, realizada con React y Typescript.
 
-Currently, two official plugins are available:
+Me he centrado en mostar un perfil de usuario.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+En este perfil, se pueden ver horas globales y una tabla con los diferentes cursos, donde se puede añadir y eliminar cursos.
 
-## Expanding the ESLint configuration
+Los estados estan manejados mediante Context API de React.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Los cursos que aparecen, prodecen de un fetch a Supabase, los cuales se puede borrar.
 
-- Configure the top-level `parserOptions` property like this:
+## Deploy
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+https://main--fluffy-beijinho-a509f4.netlify.app/
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Routes
+
+| URL                   | Description      |
+| --------------------- | ---------------- |
+| `/profile`            | Profile page     |
+| `/profile/add`        | Add course Form  |
+| `/profile/horarios`   | Time Tables page |
+| `/profile/profesores` | teachers page    |
+
+## Technologies
+
+- React
+- TypeScript
+- Hooks-form
+- Tailwind
+- Supabase Database
