@@ -8,7 +8,7 @@ En este perfil, se pueden ver horas globales y una tabla con los diferentes curs
 
 Los estados estan manejados mediante Context API de React.
 
-Los cursos que aparecen, prodecen de un fetch a Supabase, los cuales se puede borrar.
+Los cursos que aparecen, prodecen de un fetch a Supabase.
 
 ## Deploy
 
