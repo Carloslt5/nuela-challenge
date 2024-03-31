@@ -1,18 +1,12 @@
-import { useEffect, useState } from "react";
-import { Course } from "../constants/Couses.const";
-import courseService from "../services/course.services";
+import { useContext, useEffect } from "react";
+import { CourseContext } from "../contexts/courses.context";
 
 export const Table = () => {
-  const [courses, setCourses] = useState<Course[]>([]);
+  const { courses, loadCourses } = useContext(CourseContext);
 
   useEffect(() => {
     loadCourses();
-  }, []);
-
-  const loadCourses = async () => {
-    const data = await courseService.getCourses();
-    setCourses(data);
-  };
+  }, [loadCourses]);
 
   return (
     <table className="w-full overflow-hidden bg-white rounded-xl">
