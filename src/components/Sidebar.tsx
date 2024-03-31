@@ -16,7 +16,7 @@ const menuItems = [
 
 export const Sidebar = () => {
   return (
-    <div id="menu" className="left-0 z-10 w-64 min-h-screen text-black ">
+    <div id="menu" className="left-0 z-10 min-h-screen text-black w-60 ">
       <div id="logo" className="flex items-center justify-between px-4 my-6">
         <h1 className="flex items-center gap-2 font-bold">
           <IoLogoReact />

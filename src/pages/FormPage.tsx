@@ -19,6 +19,7 @@ export const FormPage = () => {
         <select
           {...register("nombre")}
           className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md"
+          required
         >
           {SubjectData.map((asignatura, index) => (
             <option key={index}>{asignatura}</option>
@@ -31,6 +32,7 @@ export const FormPage = () => {
         <select
           {...register("tipo")}
           className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md"
+          required
         >
           {SubjectType.map((type, index) => (
             <option key={index}>{type}</option>
@@ -43,6 +45,7 @@ export const FormPage = () => {
         <select
           {...register("curso")}
           className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md"
+          required
         >
           {Object.values(CourseType).map((course, index) => (
             <option key={index}>{course}</option>
@@ -55,6 +58,7 @@ export const FormPage = () => {
         <select
           {...register("grupo")}
           className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md"
+          required
         >
           {Object.values(CourseGroup).map((course, index) => (
             <option key={index}>{course}</option>
@@ -67,6 +71,7 @@ export const FormPage = () => {
         <select
           {...register("horas_semanales")}
           className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md"
+          required
         >
           {CourseHours.map((hour, index) => (
             <option key={index}>{hour}</option>
@@ -79,6 +84,7 @@ export const FormPage = () => {
         <select
           {...register("espacio_regular")}
           className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md"
+          required
         >
           {Object.entries(SubjectSpace).flatMap(([course, value]) => {
             if (Array.isArray(value)) {

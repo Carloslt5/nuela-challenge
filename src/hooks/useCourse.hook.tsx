@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
+
+import { useNavigate } from "react-router-dom";
 import { CourseContext } from "../contexts/courses.context";
 import { Course } from "../types/Courses.types";
 
 export const useCourse = () => {
   const { courses, setCourses } = useContext(CourseContext);
+  const navigate = useNavigate();
 
   const courseForm = useForm<Course>({
     defaultValues: {
@@ -21,6 +24,7 @@ export const useCourse = () => {
   const onSubmit = (data: Course) => {
     setCourses([...courses, data]);
     courseForm.reset();
+    navigate("/profile");
   };
 
   return {

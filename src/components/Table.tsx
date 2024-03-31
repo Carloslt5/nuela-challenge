@@ -1,8 +1,13 @@
 import { useContext } from "react";
 import { CourseContext } from "../contexts/courses.context";
+import { Course } from "../types/Courses.types";
 
-export const Table = () => {
-  const { courses } = useContext(CourseContext);
+type TableProps = {
+  courses: Course[];
+};
+
+export const Table = ({ courses }: TableProps) => {
+  const { deleteCourseByID } = useContext(CourseContext);
 
   return (
     <table className="w-full overflow-hidden bg-white rounded-xl">
@@ -27,9 +32,11 @@ export const Table = () => {
             <td>{item.horas_semanales}</td>
             <td>{item.espacio_regular}</td>
             <td className="flex flex-wrap gap-1 text-sm">
-              <button>Ver</button>
-              <button>Editar</button>
-              <button>Eliminar</button>
+              <button className="text-nuela-primary">Ver</button>
+              <button className="text-nuela-primary">Editar</button>
+              <button className="text-red-500" onClick={() => deleteCourseByID(item.id!)}>
+                Eliminar
+              </button>
             </td>
           </tr>
         ))}

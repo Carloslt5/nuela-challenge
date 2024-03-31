@@ -1,10 +1,14 @@
+import { useContext } from "react";
 import { IoAdd } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { SimpleWidget } from "../components/SimpleWidget";
 import { Table } from "../components/Table";
 import { UserInfo } from "../components/UserInfo";
+import { CourseContext } from "../contexts/courses.context";
 
 export const ProfilePage = () => {
+  const { totalHours, courses } = useContext(CourseContext);
+
   return (
     <main className=" w-[95%] max-w-[1200px] mx-auto">
       <section>
@@ -19,21 +23,21 @@ export const ProfilePage = () => {
           <li className="px-4 py-1 rounded-md">Anual</li>
         </ul>
         <div className="grid w-full grid-cols-3 gap-2">
-          <SimpleWidget title="Horas totales" value={20} />
-          <SimpleWidget title="Horas lectivas" value={20} />
-          <SimpleWidget title="Horas complementarioas" value={20} />
+          <SimpleWidget title="Horas totales" value={totalHours} />
+          <SimpleWidget title="Horas lectivas" value={0} />
+          <SimpleWidget title="Horas complementarioas" value={0} />
         </div>
       </section>
 
       <section>
         <Link
           to={"/profile/add"}
-          className="flex items-center px-4 py-2 my-4 ml-auto font-bold text-gray-800 bg-gray-300 rounded-md w-fit"
+          className="flex items-center gap-2 px-4 py-2 my-4 ml-auto text-white rounded-md bg-nuela-primary w-fit"
         >
           <IoAdd size={20} />
           <span>Añadir Asignatura</span>
         </Link>
-        <Table />
+        <Table courses={courses} />
       </section>
     </main>
   );
