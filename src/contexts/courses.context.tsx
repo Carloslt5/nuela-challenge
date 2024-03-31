@@ -20,7 +20,6 @@ export const CourseContext = createContext<CourseContextType>({
 
 export function CourseProviderWrapper({ children }: { children: ReactNode }) {
   const [courses, setCourses] = useState<Course[]>([]);
-  console.log("🚀 --------- courses", courses);
   const [totalHours, setHours] = useState<number>(0);
 
   const loadCourses = useCallback(async () => {
