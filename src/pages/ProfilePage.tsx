@@ -6,6 +6,7 @@ import { Table } from "../components/Table";
 import { UserInfo } from "../components/UserInfo";
 import { ViewType } from "../components/ViewType";
 import { CourseContext } from "../contexts/courses.context";
+import { user } from "./../constants/User.const";
 
 export const ProfilePage = () => {
   const { totalHours, courses } = useContext(CourseContext);
@@ -15,7 +16,7 @@ export const ProfilePage = () => {
       <section>
         <h1 className="mb-2 text-xl font-bold">Profesores</h1>
         <h2 className="text-sm">Crea y gestiona los profesores</h2>
-        <UserInfo />
+        <UserInfo user={user} />
       </section>
 
       <section className="flex flex-col items-start justify-center pb-2 border-b border-gray-500">
