@@ -1,5 +1,5 @@
 import { CourseGroup, CourseHours, CourseType } from "../constants/Couses.const";
-import { Subject, SubjectSpace, SubjectType } from "../constants/Subjects.const";
+import { SubjectData, SubjectSpace, SubjectType } from "../constants/Subjects.const";
 
 export const FormPage = () => {
   return (
@@ -15,7 +15,7 @@ export const FormPage = () => {
             Selecciona una asignatura
           </option>
 
-          {Subject.map((asignatura, index) => (
+          {SubjectData.map((asignatura, index) => (
             <option key={index}>{asignatura}</option>
           ))}
         </select>

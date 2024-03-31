@@ -1,7 +1,7 @@
 export const UserInfo = () => {
   return (
     <article className="flex items-center gap-2 py-2 my-2 border-gray-500 h-28 border-y">
-      <div className="flex items-center justify-center text-5xl text-blue-900 bg-purple-200 rounded-md w-28 aspect-square">
+      <div className="flex items-center justify-center h-full text-5xl bg-purple-200 rounded-md text-blue-950 aspect-square">
         MM
       </div>
       <div className="flex flex-col justify-between h-full">

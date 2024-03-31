@@ -1,11 +1,12 @@
 import { IoAdd } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import { SimpleWidget } from "../components/SimpleWidget";
 import { Table } from "../components/Table";
 import { UserInfo } from "../components/UserInfo";
 
 export const ProfilePage = () => {
   return (
-    <main className=" w-[95%] max-w-[1200px] bg-red-200 mx-auto">
+    <main className=" w-[95%] max-w-[1200px] mx-auto">
       <section>
         <h1 className="mb-2 text-xl font-bold">Profesores</h1>
         <h2 className="text-sm">Crea y gestiona los profesores</h2>
@@ -25,10 +26,13 @@ export const ProfilePage = () => {
       </section>
 
       <section>
-        <button className="flex items-center px-4 py-2 my-4 ml-auto font-bold text-gray-800 bg-gray-300 rounded-md">
+        <Link
+          to={"/profile/add"}
+          className="flex items-center px-4 py-2 my-4 ml-auto font-bold text-gray-800 bg-gray-300 rounded-md w-fit"
+        >
           <IoAdd size={20} />
           <span>Añadir Asignatura</span>
-        </button>
+        </Link>
         <Table />
       </section>
     </main>
