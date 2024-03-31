@@ -1,9 +1,9 @@
 import { CourseGroup, CourseHours, CourseType } from "../constants/Couses.const";
-import { Subject, TypeSubject } from "../constants/Subjects.const";
+import { Subject, SubjectSpace, SubjectType } from "../constants/Subjects.const";
 
 export const FormPage = () => {
   return (
-    <form className="w-full max-w-lg p-2 mx-auto mt-5 bg-white">
+    <form className="w-full max-w-lg p-4 mx-auto mt-5 bg-white rounded-md">
       <h1 className="mb-4">Añadir asignatura</h1>
 
       <div className="w-full mb-6 ">
@@ -28,7 +28,7 @@ export const FormPage = () => {
             Selecciona el tipo
           </option>
 
-          {TypeSubject.map((type, index) => (
+          {SubjectType.map((type, index) => (
             <option key={index}>{type}</option>
           ))}
         </select>
@@ -41,7 +41,7 @@ export const FormPage = () => {
             Selecciona el curso
           </option>
 
-          {CourseType.map((course, index) => (
+          {Object.values(CourseType).map((course, index) => (
             <option key={index}>{course}</option>
           ))}
         </select>
@@ -54,7 +54,7 @@ export const FormPage = () => {
             Selecciona el grupo
           </option>
 
-          {CourseGroup.map((course, index) => (
+          {Object.values(CourseGroup).map((course, index) => (
             <option key={index}>{course}</option>
           ))}
         </select>
@@ -72,6 +72,38 @@ export const FormPage = () => {
           ))}
         </select>
       </div>
+
+      <div className="w-full mb-6 ">
+        <label className="block mb-2 text-sm font-medium text-gray-900">Espacio</label>
+        <select className="w-full px-2 py-1 text-sm border border-gray-300 rounded-md">
+          <option disabled selected>
+            Selecciona el espacio
+          </option>
+
+          {Object.entries(SubjectSpace).flatMap(([course, value]) => {
+            if (Array.isArray(value)) {
+              return value.map((group) => (
+                <option key={`${course}-${group}`} value={`${course} - Grupo ${group}`}>
+                  {`${course} - Grupo ${group}`}
+                </option>
+              ));
+            } else {
+              return (
+                <option key={course} value={value}>
+                  {value}
+                </option>
+              );
+            }
+          })}
+        </select>
+      </div>
+
+      <button
+        type="submit"
+        className="flex items-center px-4 py-2 my-4 ml-auto font-bold text-gray-800 bg-gray-300 rounded-md"
+      >
+        Añadir asignatura
+      </button>
     </form>
   );
 };
