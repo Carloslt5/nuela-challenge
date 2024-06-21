@@ -19,6 +19,7 @@ export const useCourse = () => {
       tipo: "",
     },
   });
+  
   const { register, handleSubmit } = courseForm;
 
   const onSubmit = (data: Course) => {
