@@ -1,0 +1,29 @@
+[
+  {
+    "nombre": "Matemáticas",
+    "tipo": "Obligatoria",
+    "curso": "1º Bachillerato",
+    "grupo": "B",
+    "horas_semanales": "5",
+    "espacio_regular": "1º Bach - Grupo B",
+    "id": "1"
+  },
+  {
+    "nombre": "Matemáticas",
+    "tipo": "Obligatoria",
+    "curso": "2º Bachillerato",
+    "grupo": "C",
+    "horas_semanales": "5",
+    "espacio_regular": "2º Bach - Grupo C",
+    "id": "2"
+  },
+  {
+    "nombre": "Física y Química",
+    "tipo": "Optativa",
+    "curso": "4º ESO",
+    "grupo": "A",
+    "horas_semanales": "4",
+    "espacio_regular": "4º ESO - Grupo A",
+    "id": "3"
+  }
+]
